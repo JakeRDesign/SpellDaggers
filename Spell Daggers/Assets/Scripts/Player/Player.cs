@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 	protected bool m_fired;
 
 	// Update is called once per frame
-	void Update()
+	protected void Update()
 	{
 		m_timer += Time.deltaTime;
 	}
@@ -28,5 +28,11 @@ public class Player : MonoBehaviour
 	public float GetMovement()
 	{
 		return m_movement;
+	}
+
+	protected void Fire()
+	{
+		GameObject shotBullet = Instantiate(m_bulletPrefab, transform.position, transform.rotation);
+		m_timer = 0.0f;
 	}
 }

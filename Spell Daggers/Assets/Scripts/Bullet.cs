@@ -9,6 +9,6 @@ public class Bullet : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        transform.position += -transform.right * bulletSpeed * Time.deltaTime;
+        transform.position += transform.up * bulletSpeed * Time.deltaTime;
 	}
 }
