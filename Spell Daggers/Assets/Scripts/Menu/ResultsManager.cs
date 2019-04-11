@@ -27,11 +27,11 @@ public class ResultsManager : MonoBehaviour {
         menuButton.GetComponent<Button>().onClick.AddListener(PressMenu);
         restartButton.GetComponent<Button>().onClick.AddListener(PressRestart);
 
-        playerScore = PlayerPrefs.GetFloat("Score");
-        highScore = PlayerPrefs.GetFloat("Highscore");
+        playerScore = PlayerPrefs.GetFloat("score");
+        highScore = PlayerPrefs.GetFloat("highscore");
 
         if (playerScore > highScore) {
-            PlayerPrefs.SetFloat("Highscore", highScore);
+            PlayerPrefs.SetFloat("highscore", highScore);
             newHighscore = true;
             highScore = playerScore;
         }
@@ -58,8 +58,8 @@ public class ResultsManager : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.R)) {
-            PlayerPrefs.SetFloat("Score", 0);
-            PlayerPrefs.SetFloat("Highscore", 0);
+            PlayerPrefs.SetFloat("score", 0);
+            PlayerPrefs.SetFloat("highscore", 0);
         }
     }
 

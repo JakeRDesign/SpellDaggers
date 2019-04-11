@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
@@ -45,6 +46,7 @@ public class Timer : MonoBehaviour {
         {
             canTime = false;
             PlayerPrefs.SetFloat("score", timePassed);
+            SceneManager.LoadScene(2);
         }
     }
 }
