@@ -9,8 +9,8 @@ InputManager:
     m_Name: PlayerOneRotation
     descriptiveName: Counter-Clockwise rotation for Player One
     descriptiveNegativeName: Clockwise rotation for Player One
-    negativeButton: q
-    positiveButton: e
+    negativeButton: e
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -41,8 +41,8 @@ InputManager:
     m_Name: PlayerTwoRotation
     descriptiveName: Counter-Clockwise rotation for Player Two
     descriptiveNegativeName: Clockwise rotation for Player Two
-    negativeButton: left
-    positiveButton: right
+    negativeButton: right
+    positiveButton: left
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

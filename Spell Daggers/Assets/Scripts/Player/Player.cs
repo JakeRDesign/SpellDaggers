@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	[Tooltip("Whether or not this player is player one")]
-	[SerializeField] private bool m_playerOne;
-
-	//whether this player is pressing respective movement keys
-	private bool m_movingRight = false;
-	private bool m_movingLeft = false;
+	//movement of this player, 1 is clockwise, 0 is neutral, -1 is counter clockwise
+	protected float m_movement;
 
 	//internal timer for cooldown between shots
-	private float m_timer = 0.0f;
+	protected float m_timer = 0.0f;
 
 	[Tooltip("How long in seconds between shots")]
-	[SerializeField] private float m_shotCooldown;
+	[SerializeField] protected float m_shotCooldown;
+
+	[Tooltip("Prefab for the bullet")]
+	[SerializeField] protected GameObject m_bulletPrefab;
 
 	//bool for checking if the fire button has been let up before shooting again
-	private bool m_fired;
-	
+	protected bool m_fired;
+
 	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
 		m_timer += Time.deltaTime;
+	}
+
+	public float GetMovement()
+	{
+		return m_movement;
 	}
 }
