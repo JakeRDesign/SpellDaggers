@@ -287,6 +287,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1763309843113842, guid: 7d55d8afa842f2f488542d777210c825, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d55d8afa842f2f488542d777210c825, type: 2}
   m_IsPrefabAsset: 0
@@ -473,6 +477,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1745389819829232, guid: 2eab077c789c4b3438b822a843ce308f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eab077c789c4b3438b822a843ce308f, type: 2}
   m_IsPrefabAsset: 0
@@ -609,7 +617,8 @@ Prefab:
         type: 2}
       propertyPath: m_bulletPrefab
       value: 
-      objectReference: {fileID: 2102077842}
+      objectReference: {fileID: 1745389819829232, guid: 2eab077c789c4b3438b822a843ce308f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4d17110b9953d449fd8b1f343d9388, type: 2}
   m_IsPrefabAsset: 0
@@ -1229,6 +1238,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1966320207356124, guid: 81ae6905213f4fa44a35b302c83e469f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ae6905213f4fa44a35b302c83e469f, type: 2}
   m_IsPrefabAsset: 0
@@ -1270,6 +1283,10 @@ Prefab:
     - target: {fileID: 4030257146112344, guid: e03eb5b5ba1c4ef4ca3ce09478e7c04a, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321733930737228, guid: e03eb5b5ba1c4ef4ca3ce09478e7c04a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03eb5b5ba1c4ef4ca3ce09478e7c04a, type: 2}
@@ -1343,8 +1360,3 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996122658}
   m_CullTransparentMesh: 0
---- !u!1 &2102077842 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1745389819829232, guid: 2eab077c789c4b3438b822a843ce308f,
-    type: 2}
-  m_PrefabInternal: {fileID: 483646255}
