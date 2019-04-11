@@ -46,3 +46,6 @@ TagManager:
   - name: GameLayer
     uniqueID: 3631085489
     locked: 0
+  - name: Pause
+    uniqueID: 2709889573
+    locked: 0
