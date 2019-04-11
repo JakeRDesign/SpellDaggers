@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 	[SerializeField] protected GameObject m_bulletPrefab;
 
     [Tooltip("The empty GO where the bullet will be spawned from")]
-    public Transform bulletSpawnPoint;                                             // Game Object that stores the empty spawn point
+    [SerializeField] protected Transform bulletSpawnPoint;                                             // Game Object that stores the empty spawn point
 
     //bool for checking if the fire button has been let up before shooting again
     protected bool m_fired;
