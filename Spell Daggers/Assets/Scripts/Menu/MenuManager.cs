@@ -43,32 +43,26 @@ public class MenuManager : MonoBehaviour {
     }
 
     void PressPlay() {
-        Debug.Log("Play");
         isShowingDifficulty = true;
     }
 
     void PressExit() {
-        Debug.Log("1");
         Application.Quit();
     }
 
     void PressEasy() {
-        Debug.Log("2");
         SceneManager.LoadScene(1);
     }
 
     void PressMedium() {
-        Debug.Log("3");
         SceneManager.LoadScene(1);
     }
 
     void PressHard() {
-        Debug.Log("4");
         SceneManager.LoadScene(1);
     }
 
     void PressBack() {
-        Debug.Log("5");
         isShowingDifficulty = false;
     }
 }
