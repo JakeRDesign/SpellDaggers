@@ -9,8 +9,8 @@ InputManager:
     m_Name: PlayerOneRotation
     descriptiveName: Counter-Clockwise rotation for Player One
     descriptiveNegativeName: Clockwise rotation for Player One
-    negativeButton: e
-    positiveButton: q
+    negativeButton: a
+    positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -26,7 +26,7 @@ InputManager:
     descriptiveName: Fire key for Player One
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: w
+    positiveButton: s
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

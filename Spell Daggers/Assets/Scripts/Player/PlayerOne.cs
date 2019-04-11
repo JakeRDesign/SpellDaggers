@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerOne : Player
 {
 
+    // stores the sound file played when a bullet is fired
+    public AudioSource bulletFired;
+
 	// Use this for initialization
 	void Start()
 	{
-		
+        bulletFired = this.GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -21,6 +24,7 @@ public class PlayerOne : Player
 			if(m_timer >= m_shotCooldown && !m_fired)
 			{
 				Fire();
+                bulletFired.Play();
 			}
 			m_fired = true;
 		}

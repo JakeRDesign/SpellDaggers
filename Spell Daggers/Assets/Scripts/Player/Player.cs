@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	//movement of this player, 1 is clockwise, 0 is neutral, -1 is counter clockwise
+    //movement of this player, 1 is clockwise, 0 is neutral, -1 is counter clockwise
 	protected float m_movement;
 
 	//internal timer for cooldown between shots
@@ -16,8 +16,11 @@ public class Player : MonoBehaviour
 	[Tooltip("Prefab for the bullet")]
 	[SerializeField] protected GameObject m_bulletPrefab;
 
-	//bool for checking if the fire button has been let up before shooting again
-	protected bool m_fired;
+    [Tooltip("The empty GO where the bullet will be spawned from")]
+    public Transform bulletSpawnPoint;                                             // Game Object that stores the empty spawn point
+
+    //bool for checking if the fire button has been let up before shooting again
+    protected bool m_fired;
 
 	// Update is called once per frame
 	protected void Update()
@@ -32,7 +35,7 @@ public class Player : MonoBehaviour
 
 	protected void Fire()
 	{
-		GameObject shotBullet = Instantiate(m_bulletPrefab, transform.position, transform.rotation);
+		GameObject shotBullet = Instantiate(m_bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 		m_timer = 0.0f;
 	}
 }
