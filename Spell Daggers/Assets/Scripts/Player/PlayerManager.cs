@@ -28,4 +28,14 @@ public class PlayerManager : MonoBehaviour
 
 		transform.Rotate(Vector3.forward, m_movement * m_rotationSpeed * Time.deltaTime);
 	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		//swap enemy1 and enemy2 with whatever the enemy tags end up being
+		if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2")
+		{
+			Timer.Instance.TakeDamage();
+			//TODO deleting all enemies on screen when hit
+		}
+	}
 }
