@@ -27,6 +27,7 @@ public class MenuManager : MonoBehaviour {
     public Button easyButton;
     public Button mediumButton;
     public Button hardButton;
+    public Button nightmareButton;
 
     // View State
     CurrentView currentView;
@@ -50,6 +51,7 @@ public class MenuManager : MonoBehaviour {
         easyButton.GetComponent<Button>().onClick.AddListener(PressEasy);
         mediumButton.GetComponent<Button>().onClick.AddListener(PressMedium);
         hardButton.GetComponent<Button>().onClick.AddListener(PressHard);
+        nightmareButton.GetComponent<Button>().onClick.AddListener(PressNightmare);
 
         backButton.GetComponent<Button>().onClick.AddListener(PressBack);
         creditsBackButton.GetComponent<Button>().onClick.AddListener(PressBack);
@@ -131,6 +133,11 @@ public class MenuManager : MonoBehaviour {
         SceneManager.LoadScene(1);
         PlayerPrefs.SetFloat("difficulty", 3);
     }
+
+    void PressNightmare() {
+        SceneManager.LoadScene(3);
+    }
+
 
     void PressBack() {
         currentView = CurrentView.MenuView;
