@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506426295130220}
   m_LocalRotation: {x: -0, y: -0, z: -0.70742226, w: 0.7067912}
-  m_LocalPosition: {x: 0.8550325, y: -0.19001997, z: 0}
+  m_LocalPosition: {x: 0.86, y: -1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4125934983034448}
@@ -208,10 +208,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shotCooldown: 0.3
-  m_bulletPrefab: {fileID: 1625895002209412, guid: 7d55d8afa842f2f488542d777210c825,
+  m_bulletPrefab: {fileID: 1763309843113842, guid: c737a6a21274bb040a8e66f7df4f0dbe,
     type: 2}
   bulletSpawnPoint: {fileID: 4285812271410634}
-  bulletFired: {fileID: 0}
+  bulletFired: {fileID: 82195801018457352}
 --- !u!212 &212320298172123188
 SpriteRenderer:
   m_ObjectHideFlags: 1
