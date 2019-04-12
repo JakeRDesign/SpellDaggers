@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
         {
             spawnTimer -= spawnRate;
 
-            GameObject inst = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Count)], transform);
+            GameObject inst = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Count)], transform.position, Quaternion.identity);
             Enemy newEnemy = inst.GetComponent<Enemy>();
 
             newEnemy.InitiateEnemy(this);
