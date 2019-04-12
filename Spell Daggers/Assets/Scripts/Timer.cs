@@ -57,6 +57,8 @@ public class Timer : MonoBehaviour {
 	[SerializeField] private GameObject[] heartIcons;   //list of icons for hearts
 	private int healthLost = 0;
 
+	[SerializeField] private EnemyManager enemyManager;
+
 	private void Start()
 	{
 	    canTime = true;		// starts the timer
@@ -95,22 +97,12 @@ public class Timer : MonoBehaviour {
 		healthLost++;
 
 		//kills all enemies
-		DestroyAllEnemies();
+		enemyManager.DestroyAllEnemies();
 
 		//if health is low enough, trigger end state
 		if (health <= 0)
 		{
 			EndState();
-		}
-	}
-
-	private void DestroyAllEnemies()
-	{
-		GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-
-		for(int i = 0; i < gameObjects.Length; i++)
-		{
-			Destroy(gameObjects[i]);
 		}
 	}
 }
