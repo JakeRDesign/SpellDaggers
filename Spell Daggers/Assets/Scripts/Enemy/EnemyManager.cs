@@ -40,11 +40,25 @@ public class EnemyManager : MonoBehaviour
             {
                 e.UpdateEnemy(target);
             }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            DestroyAllEnemies();
+        }
 	}
 
     public void DestroyEnemy(Enemy e)
     {
         instantiatedEnemies.Remove(e);
         Destroy(e.gameObject);
+    }
+
+    public void DestroyAllEnemies()
+    {
+        for (int i = instantiatedEnemies.Count - 1; i >= 0; --i)
+        {
+            DestroyEnemy(instantiatedEnemies[i]);
+        }
+
     }
 }

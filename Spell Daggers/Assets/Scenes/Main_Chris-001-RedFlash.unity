@@ -759,6 +759,7 @@ GameObject:
   - component: {fileID: 1401248093}
   - component: {fileID: 1401248092}
   - component: {fileID: 1401248091}
+  - component: {fileID: 1401248095}
   m_Layer: 5
   m_Name: RedFlash
   m_TagString: Untagged
@@ -842,6 +843,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1401248095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1401248090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79b8b0a9a9c8b54385eba28a7158502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colourTransitions:
+  - colour: {r: 1, g: 1, b: 1, a: 1}
+    lerpTime: 1
+  - colour: {r: 1, g: 0, b: 0, a: 1}
+    lerpTime: 0.5
+  - colour: {r: 1, g: 0.33460778, b: 0, a: 1}
+    lerpTime: 0.5
+  - colour: {r: 1, g: 0.8426658, b: 0, a: 1}
+    lerpTime: 0.5
+  - colour: {r: 0, g: 1, b: 0.06752968, a: 1}
+    lerpTime: 0.5
+  - colour: {r: 0, g: 0.05476284, b: 1, a: 1}
+    lerpTime: 0.5
+  - colour: {r: 1, g: 0, b: 0.8535938, a: 1}
+    lerpTime: 0.5
+  - colour: {r: 0.7734461, g: 0, b: 1, a: 1}
+    lerpTime: 0.5
 --- !u!1 &1435906249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.23921569}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
