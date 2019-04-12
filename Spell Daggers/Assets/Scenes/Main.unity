@@ -1527,6 +1527,7 @@ MonoBehaviour:
   spawnRateDecrease: 0.1
   spawnRateDecreaseRate: 5
   spawnRateCap: 0.1
+  spawnRadius: 75
 --- !u!1 &954814706
 GameObject:
   m_ObjectHideFlags: 0

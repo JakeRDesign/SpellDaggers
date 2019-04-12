@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     public float spawnRateDecreaseRate = 5.0f;
     [Range (0.1f, 5.0f)]
     public float spawnRateCap = 0.1f;
+    public int spawnRadius = 75.0f;
 
     private List<Enemy> instantiatedEnemies = new List<Enemy>();
     private float spawnTimer = 0;
@@ -38,6 +39,9 @@ public class EnemyManager : MonoBehaviour
 
             GameObject inst = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Count)], transform.position, Quaternion.identity);
             Enemy newEnemy = inst.GetComponent<Enemy>();
+
+            Vector2 spawnDir = Random.insideUnitCircle.normalized;
+            inst.transform.position = new Vector3(spawnDir.x, spawnDir.y, 0) * spawnRadius + transform.position;
 
             newEnemy.InitiateEnemy(this);
             instantiatedEnemies.Add(newEnemy);

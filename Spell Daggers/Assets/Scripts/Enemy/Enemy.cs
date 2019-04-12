@@ -21,23 +21,6 @@ public class Enemy : MonoBehaviour
         speed = Random.Range(minSpeed, maxSpeed);
         rb = GetComponent<Rigidbody2D>();
         manager = em;
-
-        float randSpawnCoord = Random.Range(0.0f, 1.0f);
-        Vector2 spawnPoint = new Vector2(randSpawnCoord, randSpawnCoord);
-
-        switch(Random.Range(0, 4))
-        {
-            case 0: { spawnPoint.y = 1.1f;     break; }
-            case 1: { spawnPoint.x = 1.1f;     break; }
-            case 2: { spawnPoint.y = -0.1f;    break; }
-            case 3: { spawnPoint.x = -0.1f;    break; }
-            default: { Debug.Assert(false, "SpawnPoint randomiser switch statement fell to default"); break; }
-        }
-
-        Vector3 newPosition = Camera.main.ViewportToWorldPoint(spawnPoint);
-        newPosition.z = 0;
-
-        transform.position = newPosition;
 	}
 
     public void UpdateEnemy(Transform targetLocation)
