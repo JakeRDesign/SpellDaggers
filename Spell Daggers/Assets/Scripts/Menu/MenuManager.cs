@@ -8,17 +8,20 @@ public class MenuManager : MonoBehaviour {
 
     // Main Buttons
     public Button playButton;
+    public Button controlsButton;
     public Button creditsButton;
     public Button exitButton;
 
     // UI Panels
     public GameObject menuPanel;
+    public GameObject controlsPanel;
     public GameObject difficultyPanel;
     public GameObject creditsPanel;
 
     // Back Buttons
     public Button backButton;
     public Button creditsBackButton;
+    public Button controlsBackButton;
 
     // Difficulty Buttons
     public Button easyButton;
@@ -32,6 +35,7 @@ public class MenuManager : MonoBehaviour {
         MenuView,
         DifficultyView,
         CreditsView,
+        ControlsView,
 
     }
 
@@ -39,6 +43,7 @@ public class MenuManager : MonoBehaviour {
 
         // Assign buttons to methods
         playButton.GetComponent<Button>().onClick.AddListener(PressPlay);
+        controlsButton.GetComponent<Button>().onClick.AddListener(PressControls);
         creditsButton.GetComponent<Button>().onClick.AddListener(PressCredits);
         exitButton.GetComponent<Button>().onClick.AddListener(PressExit);
 
@@ -48,6 +53,7 @@ public class MenuManager : MonoBehaviour {
 
         backButton.GetComponent<Button>().onClick.AddListener(PressBack);
         creditsBackButton.GetComponent<Button>().onClick.AddListener(PressBack);
+        controlsBackButton.GetComponent<Button>().onClick.AddListener(PressBack);
 
         // Set the view to the main menu
         currentView = CurrentView.MenuView;
@@ -61,24 +67,35 @@ public class MenuManager : MonoBehaviour {
                 menuPanel.SetActive(true);
                 difficultyPanel.SetActive(false);
                 creditsPanel.SetActive(false);
+                controlsPanel.SetActive(false);
                 break;
 
             case CurrentView.DifficultyView:
                 menuPanel.SetActive(false);
                 difficultyPanel.SetActive(true);
                 creditsPanel.SetActive(false);
+                controlsPanel.SetActive(false);
                 break;
 
             case CurrentView.CreditsView:
                 menuPanel.SetActive(false);
                 difficultyPanel.SetActive(false);
                 creditsPanel.SetActive(true);
+                controlsPanel.SetActive(false);
+                break;
+
+            case CurrentView.ControlsView:
+                menuPanel.SetActive(false);
+                difficultyPanel.SetActive(false);
+                creditsPanel.SetActive(false);
+                controlsPanel.SetActive(true);
                 break;
 
             default:
                 menuPanel.SetActive(true);
                 difficultyPanel.SetActive(false);
                 creditsPanel.SetActive(false);
+                controlsPanel.SetActive(false);
                 break;
         }
 
@@ -90,6 +107,10 @@ public class MenuManager : MonoBehaviour {
 
     void PressCredits() {
         currentView = CurrentView.CreditsView;
+    }
+
+    void PressControls() {
+        currentView = CurrentView.ControlsView;
     }
 
     void PressExit() {
