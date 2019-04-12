@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     public void UpdateEnemy(Transform targetLocation)
     {
         Vector2 target = new Vector2(targetLocation.position.x, targetLocation.position.y);
-        Vector2 newVelocity = (target - new Vector2(transform.position.x, transform.position.y)).normalized * speed;
+        Vector2 newVelocity = (target - new Vector2(transform.position.x, transform.position.y)).normalized * speed * PlayerPrefs.GetFloat("difficulty");
 
         rb.velocity = newVelocity;
     }
