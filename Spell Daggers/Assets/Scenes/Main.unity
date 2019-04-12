@@ -1519,6 +1519,9 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 1321733930737228, guid: ffd8ec6cf25edeb47ab7422ac4b5f789, type: 2}
   - {fileID: 1966320207356124, guid: d420864a65cd3764a963da176f49c135, type: 2}
+  spawnRateDecrease: 0.1
+  spawnRateDecreaseRate: 5
+  spawnRateCap: 0.1
 --- !u!1 &954814706
 GameObject:
   m_ObjectHideFlags: 0

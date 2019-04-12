@@ -9,14 +9,22 @@ public class EnemyManager : MonoBehaviour
     public float spawnRate = 2.0f;
     public List<GameObject> enemyTypes;
 
+    public float spawnRateDecrease = 0.1f;
+    public float spawnRateDecreaseRate = 5.0f;
+    [Range (0.1f, 5.0f)]
+    public float spawnRateCap = 0.1f;
+
     private List<Enemy> instantiatedEnemies = new List<Enemy>();
     private float spawnTimer = 0;
+    private float initialSpawnRate;
 
 	// Use this for initialization
 	void Start ()
     {
         if (target == null)
             target = transform;
+
+        initialSpawnRate = spawnRate;
 	}
 	
 	// Update is called once per frame
@@ -41,10 +49,9 @@ public class EnemyManager : MonoBehaviour
                 e.UpdateEnemy(target);
             }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            DestroyAllEnemies();
-        }
+        spawnRate = initialSpawnRate - (int)(Time.time / spawnRateDecreaseRate) * spawnRateDecrease;
+        if (spawnRate < spawnRateCap)
+            spawnRate = spawnRateCap;
 	}
 
     public void DestroyEnemy(Enemy e)

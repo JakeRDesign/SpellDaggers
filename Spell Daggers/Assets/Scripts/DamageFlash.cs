@@ -20,16 +20,6 @@ public class DamageFlash : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && colourTransitions.Count != 0 && isTransitioning == false)
-        {
-            damageFlash.color = colourTransitions[0].colour;
-
-            transitionTimer = 0;
-            colourCount = 0;
-
-            isTransitioning = true;
-        }
-
         if (isTransitioning)
         {
             if (colourCount == colourTransitions.Count - 1)
