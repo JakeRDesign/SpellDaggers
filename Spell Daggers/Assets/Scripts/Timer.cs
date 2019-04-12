@@ -58,6 +58,7 @@ public class Timer : MonoBehaviour {
 	private int healthLost = 0;
 
 	[SerializeField] private EnemyManager enemyManager;
+    [SerializeField] private DamageFlash flash;
 
 	private void Start()
 	{
@@ -93,17 +94,20 @@ public class Timer : MonoBehaviour {
 	{
 		//reduce health
 		health -= 1;
-		heartIcons[healthLost].GetComponent<Animator>().enabled = true;
-		healthLost++;
-
-		//kills all enemies
-		enemyManager.DestroyAllEnemies();
 
 		//if health is low enough, trigger end state
 		if (health <= 0)
 		{
 			EndState();
 		}
+		heartIcons[healthLost].GetComponent<Animator>().enabled = true;
+		healthLost++;
+
+        //flash screen
+        flash.StartDamageFlash();
+
+		//kills all enemies
+		enemyManager.DestroyAllEnemies();
 	}
 
 	public int GetHealth()
