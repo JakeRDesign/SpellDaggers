@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shotCooldown: 0.3
-  m_bulletPrefab: {fileID: 1763309843113842, guid: c737a6a21274bb040a8e66f7df4f0dbe,
+  m_bulletPrefab: {fileID: 1763309843113842, guid: 7d55d8afa842f2f488542d777210c825,
     type: 2}
   bulletSpawnPoint: {fileID: 4285812271410634}
   bulletFired: {fileID: 82195801018457352}
