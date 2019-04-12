@@ -131,6 +131,8 @@ MonoBehaviour:
   minSpeed: 4
   maxSpeed: 9
   isRed: 0
+  deathSprite: {fileID: 1435960278025370, guid: e4c7da64455287d489dfc27d3043586d,
+    type: 2}
 --- !u!212 &212247832834149522
 SpriteRenderer:
   m_ObjectHideFlags: 1

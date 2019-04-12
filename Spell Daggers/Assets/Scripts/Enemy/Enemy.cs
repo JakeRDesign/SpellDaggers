@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float minSpeed = 1;
     public float maxSpeed = 5;
     public bool isRed = true;
+    public GameObject deathSprite = null;
 
     private float speed = 0;
     private Rigidbody2D rb = null;
@@ -60,5 +61,14 @@ public class Enemy : MonoBehaviour
 
         if (isRed && collision.gameObject.tag == "Red" || !isRed && collision.gameObject.tag == "Blue")
             manager.DestroyEnemy(this);
+    }
+
+    private void OnDestroy()
+    {
+        if (deathSprite != null)
+        {
+            GameObject go = Instantiate(deathSprite, transform.position, Quaternion.identity);
+            Destroy(go, go.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        }
     }
 }
