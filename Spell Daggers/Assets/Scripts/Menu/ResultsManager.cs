@@ -7,10 +7,8 @@ using TMPro;
 
 public class ResultsManager : MonoBehaviour {
 
-    [HideInInspector] public float playerScore;
-    [HideInInspector] public float highScore;
-
-    private bool newHighscore;
+    public float playerScore;
+    public float highScore;
 
     public Button menuButton;
     public Button restartButton;
@@ -23,11 +21,10 @@ public class ResultsManager : MonoBehaviour {
         restartButton.GetComponent<Button>().onClick.AddListener(PressRestart);
 
         playerScore = PlayerPrefs.GetFloat("score");
-        highScore = PlayerPrefs.GetFloat("highscore");
+        highScore = PlayerPrefs.GetFloat("highscore" + PlayerPrefs.GetFloat("difficulty"));
 
         if (playerScore > highScore) {
-            PlayerPrefs.SetFloat("highscore", highScore);
-            newHighscore = true;
+            PlayerPrefs.SetFloat("highscore" + PlayerPrefs.GetFloat("difficulty"), playerScore);
             highScore = playerScore;
         }
 
@@ -38,15 +35,8 @@ public class ResultsManager : MonoBehaviour {
         string highMinutes = Mathf.Floor((highScore % 3600) / 60).ToString("00");
         string highSeconds = (highScore % 60).ToString("00");
 
-        scoreText.GetComponent<TextMeshProUGUI>().text = "Time: " + scoreMinutes + ":" + scoreSeconds.ToString();
+        scoreText.GetComponent<TextMeshProUGUI>().text = "Time: " + scoreMinutes + ":" + scoreSeconds;
         highscoreText.GetComponent<TextMeshProUGUI>().text = "Highscore: " + highMinutes + ":" + highSeconds;
-    }
-
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
-            PlayerPrefs.SetFloat("score", 0);
-            PlayerPrefs.SetFloat("highscore", 0);
-        }
     }
 
     void PressRestart() {
