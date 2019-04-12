@@ -5156,9 +5156,7 @@ MonoBehaviour:
 
     Right: Rotate Right
 
-    Down: Shoot
-
-'
+    R Ctrl: Shoot'
 --- !u!222 &1435466376
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6534,9 +6532,7 @@ MonoBehaviour:
 
     D: Rotate Right
 
-    S: Shoot
-
-'
+    F: Shoot'
 --- !u!222 &1808598792
 CanvasRenderer:
   m_ObjectHideFlags: 0
