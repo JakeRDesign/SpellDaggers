@@ -52,4 +52,14 @@ public class Enemy : MonoBehaviour
         if (isRed && collision.gameObject.tag == "Red" || !isRed && collision.gameObject.tag == "Blue")
             manager.DestroyEnemy(this);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Bullet b = collision.GetComponent<Bullet>();
+        if (b != null)
+            b.BulletCollided();
+
+        if (isRed && collision.gameObject.tag == "Red" || !isRed && collision.gameObject.tag == "Blue")
+            manager.DestroyEnemy(this);
+    }
 }

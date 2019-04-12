@@ -11,4 +11,12 @@ public class Bullet : MonoBehaviour
     {
         transform.position += transform.up * bulletSpeed * Time.deltaTime;
 	}
+
+    public void BulletCollided()
+    {
+        Animator anim = GetComponentInChildren<Animator>();
+        anim.SetBool("destroy", true);
+
+        Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
+    }
 }
