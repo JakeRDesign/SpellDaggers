@@ -105,4 +105,9 @@ public class Timer : MonoBehaviour {
 			EndState();
 		}
 	}
+
+	public int GetHealth()
+	{
+		return health;
+	}
 }
