@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour {
 		get
 		{
 			//if timer doesn't already exist
-			if(instance = null)
+			if(instance == null)
 			{
 				instance = FindObjectOfType<Timer>();
 			}
@@ -46,17 +46,24 @@ public class Timer : MonoBehaviour {
 	#endregion
 
 	[Header("Timer")]
-	public bool canTime = false;                        // bool that determines wherther the timer can run or not
-	public Text timer;                                  // stores the UI element for the timer that will tick up
-	public float timePassed;                            // how much time has passed
-	public float speed;                                 // speed multiplier for the timer, for testing purposes
+	[SerializeField] private bool canTime = false;		// bool that determines wherther the timer can run or not
+	[SerializeField] private Text timer;				// stores the UI element for the timer that will tick up
+	[SerializeField] private float timePassed;			// how much time has passed
+	[SerializeField] private float speed = 1.0f;		// speed multiplier for the timer, for testing purposes
 	
 	[Header("Health and End State")]
-	public int health = 3;                              // how many lives the players have
+	[SerializeField] private int health = 3;			// how many lives the players has
+
+	[SerializeField] private GameObject[] heartIcons;   //list of icons for hearts
+	private int healthLost = 0;
 
 	private void Start()
 	{
-	    canTime = true;                                 // starts the timer
+	    canTime = true;		// starts the timer
+		for (int i = 0; i < heartIcons.Length; i++)
+		{
+			heartIcons[i].GetComponent<Animator>().enabled = false;
+		}
 	}
 
 	// Update is called once per frame
@@ -68,7 +75,7 @@ public class Timer : MonoBehaviour {
 			//string hours = (timePassed % 3600).ToString("00");
 			string minutes = Mathf.Floor((timePassed % 3600) / 60).ToString("00");
 			string seconds = (timePassed % 60).ToString("00");
-			timer.text = /*hours + ":" + */minutes + ":" + seconds;
+			//timer.text = /*hours + ":" + */minutes + ":" + seconds;
 		}
 	}
 
@@ -84,6 +91,8 @@ public class Timer : MonoBehaviour {
 	{
 		//reduce health
 		health -= 1;
+		heartIcons[healthLost].GetComponent<Animator>().enabled = true;
+		healthLost++;
 
 		//if health is low enough, trigger end state
 		if (health <= 0)

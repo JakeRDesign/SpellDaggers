@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		//swap enemy1 and enemy2 with whatever the enemy tags end up being
-		if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2")
+		if (collision.gameObject.tag == "Enemy")
 		{
 			Timer.Instance.TakeDamage();
 			//TODO deleting all enemies on screen when hit
