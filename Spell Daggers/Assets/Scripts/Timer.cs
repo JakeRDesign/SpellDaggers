@@ -67,7 +67,11 @@ public class Timer : MonoBehaviour {
 		{
 			heartIcons[i].GetComponent<Animator>().enabled = false;
 		}
-	}
+
+        playerCamera = Camera.main.transform;
+        startPosition = playerCamera.localPosition;
+        initialDuration = duration;
+    }
 
 	// Update is called once per frame
 	void Update()
@@ -80,7 +84,20 @@ public class Timer : MonoBehaviour {
 			string seconds = (timePassed % 60).ToString("00");
 			timer.text = /*hours + ":" + */minutes + ":" + seconds;
 		}
-	}
+
+        if (shouldShake) {
+            if (duration > 0) {
+                playerCamera.localPosition = startPosition + Random.insideUnitSphere * power;
+                duration -= Time.deltaTime * slowDownAmount;
+            }
+
+            else {
+                shouldShake = false;
+                duration = initialDuration;
+                playerCamera.localPosition = startPosition;
+            }
+        }
+    }
 
 	//ends the game
 	void EndState()
@@ -108,10 +125,25 @@ public class Timer : MonoBehaviour {
 
 		//kills all enemies
 		enemyManager.DestroyAllEnemies();
+
+        shouldShake = true;
 	}
 
 	public int GetHealth()
 	{
 		return health;
 	}
+
+
+
+    public float power = 10f;
+    public float duration = .5f;
+    public Transform playerCamera;
+    public float slowDownAmount = 1.0f;
+    public bool shouldShake = false;
+
+    Vector3 startPosition;
+    float initialDuration;
+
+
 }

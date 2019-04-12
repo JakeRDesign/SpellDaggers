@@ -630,6 +630,11 @@ MonoBehaviour:
   - {fileID: 448639034}
   enemyManager: {fileID: 945192614}
   flash: {fileID: 1685095800}
+  power: 1
+  duration: 0.5
+  playerCamera: {fileID: 0}
+  slowDownAmount: 1
+  shouldShake: 0
 --- !u!1 &448505585
 GameObject:
   m_ObjectHideFlags: 0
