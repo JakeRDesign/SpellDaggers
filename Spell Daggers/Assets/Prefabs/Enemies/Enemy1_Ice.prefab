@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpeed: 1
   maxSpeed: 5
-  isRed: 1
+  isRed: 0
 --- !u!212 &212247832834149522
 SpriteRenderer:
   m_ObjectHideFlags: 1
