@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: LightVignette
+  m_Name: MenuPosts
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -42,8 +42,8 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 0
     m_Settings:
-      intensity: 1.74
-      radius: 6.06
+      intensity: 1
+      radius: 0.3
       sampleCount: 10
       downsampling: 1
       forceForwardCompatibility: 0
@@ -97,13 +97,13 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       bloom:
-        intensity: 0.6
+        intensity: 0.5
         threshold: 1.1
-        softKnee: 0.507
-        radius: 7
+        softKnee: 0.5
+        radius: 4
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       tonemapping:
-        tonemapper: 0
+        tonemapper: 2
         neutralBlackIn: 0.02
         neutralWhiteIn: 10
         neutralBlackOut: 0
@@ -120,9 +120,9 @@ MonoBehaviour:
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
-        postExposure: 0.3
+        postExposure: 0
         temperature: 0
-        tint: -9
+        tint: 0
         hueShift: 0
         saturation: 1
         contrast: 1
@@ -305,10 +305,10 @@ MonoBehaviour:
       lut: {fileID: 0}
       contribution: 1
   chromaticAberration:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 0
+      intensity: 0.146
   grain:
     m_Enabled: 0
     m_Settings:
@@ -322,12 +322,12 @@ MonoBehaviour:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.5
-      smoothness: 0.062
+      intensity: 0.218
+      smoothness: 0.165
       roundness: 1
       mask: {fileID: 0}
       opacity: 1
-      rounded: 1
+      rounded: 0
   dithering:
     m_Enabled: 0
   monitors:

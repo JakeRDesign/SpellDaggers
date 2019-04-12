@@ -18,7 +18,7 @@ public class PauseManager : MonoBehaviour {
         resumeButton.GetComponent<Button>().onClick.AddListener(PressResume);
         restartButton.GetComponent<Button>().onClick.AddListener(PressRestart);
         menuButton.GetComponent<Button>().onClick.AddListener(PressMenu);
-        pausePanel.GetComponent<CanvasGroup>().alpha = 0f;
+        pausePanel.SetActive(false);
     }
 
     void Update() {
@@ -26,18 +26,18 @@ public class PauseManager : MonoBehaviour {
             isPaused = !isPaused;
             if (isPaused) {
                 Time.timeScale = 0.0f;
-                pausePanel.GetComponent<CanvasGroup>().alpha = 1f;
+                pausePanel.SetActive(true);
             } else {
                 Time.timeScale = 1.0f;
-                pausePanel.GetComponent<CanvasGroup>().alpha = 0f;
+                pausePanel.SetActive(false);
             }
         }
     }
 
     void PressResume() {
         Time.timeScale = 1.0f;
-        pausePanel.GetComponent<CanvasGroup>().alpha = 0f;
         isPaused = false;
+        pausePanel.SetActive(false);
     }
 
     void PressRestart() {
