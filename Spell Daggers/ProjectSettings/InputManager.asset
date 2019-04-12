@@ -26,7 +26,7 @@ InputManager:
     descriptiveName: Fire key for Player One
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: s
+    positiveButton: f
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -58,7 +58,7 @@ InputManager:
     descriptiveName: Fire key for Player Two
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: down
+    positiveButton: right ctrl
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
