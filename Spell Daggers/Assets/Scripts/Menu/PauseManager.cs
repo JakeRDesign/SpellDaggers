@@ -41,10 +41,12 @@ public class PauseManager : MonoBehaviour {
     }
 
     void PressRestart() {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(1);
     }
 
     void PressMenu() {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
 }
