@@ -31,8 +31,15 @@ public class ResultsManager : MonoBehaviour {
             highScore = playerScore;
         }
 
-        scoreText.GetComponent<TextMeshProUGUI>().text = "Time: " + playerScore.ToString();
-        highscoreText.GetComponent<TextMeshProUGUI>().text = "Highscore: " + highScore.ToString();
+
+        string scoreMinutes = Mathf.Floor((playerScore % 3600) / 60).ToString("00");
+        string scoreSeconds = (playerScore % 60).ToString("00");
+
+        string highMinutes = Mathf.Floor((highScore % 3600) / 60).ToString("00");
+        string highSeconds = (highScore % 60).ToString("00");
+
+        scoreText.GetComponent<TextMeshProUGUI>().text = "Time: " + scoreMinutes + ":" + scoreSeconds.ToString();
+        highscoreText.GetComponent<TextMeshProUGUI>().text = "Highscore: " + highMinutes + ":" + highSeconds;
     }
 
     void Update() {
