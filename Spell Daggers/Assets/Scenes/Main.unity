@@ -627,6 +627,7 @@ MonoBehaviour:
   - {fileID: 1435906249}
   - {fileID: 954814706}
   - {fileID: 448639034}
+  enemyManager: {fileID: 945192614}
 --- !u!1 &448505585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,7 +1549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147.41003, y: -59.00006}
+  m_AnchoredPosition: {x: 147.41003, y: -59}
   m_SizeDelta: {x: 818.93, y: 818.92993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954814708
@@ -2201,7 +2202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 230.50977, y: -59.00006}
+  m_AnchoredPosition: {x: 230.50977, y: -59}
   m_SizeDelta: {x: 818.93, y: 818.92993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435906251

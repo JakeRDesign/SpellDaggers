@@ -47,17 +47,16 @@ public class Enemy : MonoBehaviour
         rb.velocity = newVelocity;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (isRed && collision.gameObject.tag == "Red" || !isRed && collision.gameObject.tag == "Blue")
-            manager.DestroyEnemy(this);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Bullet b = collision.GetComponent<Bullet>();
         if (b != null)
             b.BulletCollided();
+        else if (collision.tag == "Player")
+        {
+            Timer.Instance.TakeDamage();
+        }
+
 
         if (isRed && collision.gameObject.tag == "Red" || !isRed && collision.gameObject.tag == "Blue")
             manager.DestroyEnemy(this);
