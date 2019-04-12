@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour {
 
     public GameObject pausePanel;
+    public EnemyManager enemyManager;
 
     public Button resumeButton;
     public Button restartButton;
@@ -42,6 +43,7 @@ public class PauseManager : MonoBehaviour {
 
     void PressRestart() {
         Time.timeScale = 1.0f;
+        enemyManager.ResetSpawnRate();
         SceneManager.LoadScene(1);
     }
 

@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e83abf20c366b554baadabe545dc6500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 4
-  maxSpeed: 9
+  minSpeed: 3
+  maxSpeed: 7
   isRed: 1
   deathSprite: {fileID: 1120494552365484, guid: 5f4ab9989ccbf14489d098538c88ca8e,
     type: 2}

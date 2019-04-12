@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Result Screen.unity
     guid: d2e6c844deb21464d95cfca0150dbf2f
+  - enabled: 1
+    path: Assets/Scenes/Main_Nightmare.unity
+    guid: 1896b2bdc9d990a43974d6384bfe2d4c
   m_configObjects: {}

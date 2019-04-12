@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 108962429}
+  enemyManager: {fileID: 945192614}
   resumeButton: {fileID: 1408022236}
   restartButton: {fileID: 1189254824}
   menuButton: {fileID: 1079017420}
