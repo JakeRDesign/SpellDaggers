@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
         {
             spawnTimer -= spawnRate;
 
-            GameObject inst = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Count)], transform);
+            GameObject inst = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Count)], transform.position, Quaternion.identity);
             Enemy newEnemy = inst.GetComponent<Enemy>();
 
             newEnemy.InitiateEnemy(this);
@@ -40,11 +40,25 @@ public class EnemyManager : MonoBehaviour
             {
                 e.UpdateEnemy(target);
             }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            DestroyAllEnemies();
+        }
 	}
 
     public void DestroyEnemy(Enemy e)
     {
         instantiatedEnemies.Remove(e);
         Destroy(e.gameObject);
+    }
+
+    public void DestroyAllEnemies()
+    {
+        for (int i = instantiatedEnemies.Count - 1; i >= 0; --i)
+        {
+            DestroyEnemy(instantiatedEnemies[i]);
+        }
+
     }
 }
