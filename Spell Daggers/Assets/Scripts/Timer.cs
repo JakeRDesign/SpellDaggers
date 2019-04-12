@@ -75,7 +75,7 @@ public class Timer : MonoBehaviour {
 			//string hours = (timePassed % 3600).ToString("00");
 			string minutes = Mathf.Floor((timePassed % 3600) / 60).ToString("00");
 			string seconds = (timePassed % 60).ToString("00");
-			//timer.text = /*hours + ":" + */minutes + ":" + seconds;
+			timer.text = /*hours + ":" + */minutes + ":" + seconds;
 		}
 	}
 
@@ -98,6 +98,16 @@ public class Timer : MonoBehaviour {
 		if (health <= 0)
 		{
 			EndState();
+		}
+	}
+
+	private void DestroyAllEnemies()
+	{
+		GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+
+		for(int i = 0; i < gameObjects.Length; i++)
+		{
+			Destroy(gameObjects[i]);
 		}
 	}
 }

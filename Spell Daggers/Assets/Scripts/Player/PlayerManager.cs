@@ -35,7 +35,6 @@ public class PlayerManager : MonoBehaviour
 		if (collision.gameObject.tag == "Enemy")
 		{
 			Timer.Instance.TakeDamage();
-			//TODO deleting all enemies on screen when hit
 		}
 	}
 }
