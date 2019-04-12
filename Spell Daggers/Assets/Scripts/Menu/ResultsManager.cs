@@ -18,11 +18,6 @@ public class ResultsManager : MonoBehaviour {
     public GameObject scoreText;
     public GameObject highscoreText;
 
-    public GameObject newHighscorePanel;
-    private float highscoreAlpha;
-    private bool increaseAlpha;
-
-    
     void Start () {
         menuButton.GetComponent<Button>().onClick.AddListener(PressMenu);
         restartButton.GetComponent<Button>().onClick.AddListener(PressRestart);
@@ -41,22 +36,6 @@ public class ResultsManager : MonoBehaviour {
     }
 
     void Update() {
-        if (newHighscore) {
-
-            if (increaseAlpha) {
-                highscoreAlpha += Time.deltaTime * 1f;
-                if (highscoreAlpha > 1f) increaseAlpha = false;
-            }
-            else {
-                highscoreAlpha -= Time.deltaTime * 1f;
-                if (highscoreAlpha < .3f) increaseAlpha = true;
-            }
-
-            newHighscorePanel.GetComponent<CanvasGroup>().alpha = highscoreAlpha;
-        } else {
-            newHighscorePanel.GetComponent<CanvasGroup>().alpha = highscoreAlpha;
-        }
-
         if (Input.GetKeyDown(KeyCode.R)) {
             PlayerPrefs.SetFloat("score", 0);
             PlayerPrefs.SetFloat("highscore", 0);
