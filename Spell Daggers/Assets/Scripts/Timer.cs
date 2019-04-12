@@ -102,6 +102,7 @@ public class Timer : MonoBehaviour {
 	//ends the game
 	void EndState()
 	{
+        enemyManager.ResetSpawnRate();
 		canTime = false;
 		PlayerPrefs.SetFloat("score", timePassed);
 		SceneManager.LoadScene(2);

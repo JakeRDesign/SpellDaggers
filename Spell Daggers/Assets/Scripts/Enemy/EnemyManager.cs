@@ -13,7 +13,7 @@ public class EnemyManager : MonoBehaviour
     public float spawnRateDecreaseRate = 5.0f;
     [Range (0.1f, 5.0f)]
     public float spawnRateCap = 0.1f;
-    public int spawnRadius = 75.0f;
+    public int spawnRadius = 75;
 
     private List<Enemy> instantiatedEnemies = new List<Enemy>();
     private float spawnTimer = 0;
@@ -71,5 +71,10 @@ public class EnemyManager : MonoBehaviour
             DestroyEnemy(instantiatedEnemies[i]);
         }
 
+    }
+
+    public void ResetSpawnRate()
+    {
+        spawnRate = initialSpawnRate;
     }
 }
