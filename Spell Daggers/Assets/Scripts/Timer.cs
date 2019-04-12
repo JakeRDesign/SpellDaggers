@@ -94,6 +94,9 @@ public class Timer : MonoBehaviour {
 		heartIcons[healthLost].GetComponent<Animator>().enabled = true;
 		healthLost++;
 
+		//kills all enemies
+		DestroyAllEnemies();
+
 		//if health is low enough, trigger end state
 		if (health <= 0)
 		{
