@@ -6,9 +6,10 @@ public class BulletKillZone : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Red" || other.tag == "Blue")
+        if (other.gameObject.tag == "Red" || other.gameObject.tag == "Blue")
         {
-            Destroy(other);
+            Destroy(other.gameObject);
+            Debug.Log("bullet destroyed");
         }
     }
 }

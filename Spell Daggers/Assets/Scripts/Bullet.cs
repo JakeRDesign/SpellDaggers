@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     {
         Animator anim = GetComponentInChildren<Animator>();
         anim.SetBool("destroy", true);
-
+        bulletSpeed = 0;
         Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
     }
 }
